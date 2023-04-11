@@ -28,15 +28,35 @@ class _SigninPageState extends State<SigninPage> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 56.h,),
+                margin: EdgeInsets.only(
+                  top: 56.h,
+                ),
                 padding: EdgeInsets.only(left: 25.w),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    reusableText(text: "Email",),
-                    reusableTextFormField("Email", "Email"),
+                    reusableText(
+                      text: "Email",
+                    ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    reusableTextFormField(
+                        "Enter Your Email Address", "email", "user"),
+                    reusableText(
+                      text: "Password",
+                    ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    reusableTextFormField(
+                        "Enter Your Password", "password", "user"),
                   ],
                 ),
-              )
+              ),
+              forgetTextColor(),
+              resuableLoginRegButton("Login", "login"),
+              resuableLoginRegButton("Registration", "registration"),
             ],
           ),
         ),
