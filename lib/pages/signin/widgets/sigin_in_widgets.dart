@@ -77,7 +77,7 @@ Widget reusableText({required String text}) {
 }
 
 Widget reusableTextFormField(
-    String hintText, String textType, String iconName) {
+    String hintText, String textType, String iconName, void Function(String value) func,) {
   return Container(
     width: 325.w,
     height: 50.h,
@@ -109,6 +109,7 @@ Widget reusableTextFormField(
           height: 50.h,
           width: 270.w,
           child: TextFormField(
+            onChanged: (value) => func(value),
             keyboardType: TextInputType.multiline,
             obscureText: textType == "password" ? true : false,
             style: TextStyle(
